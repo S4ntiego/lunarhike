@@ -1,4 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const path = require("path");
+const { withPayload } = require("@payloadcms/next-payload");
 
-module.exports = nextConfig
+module.exports = withPayload(
+  {
+    // Next config
+  },
+  {
+    // Point to Payload config (Required)
+    configPath: path.resolve(__dirname, "./payload/payload.config.ts"),
+  }
+);
